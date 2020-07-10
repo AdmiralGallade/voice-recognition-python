@@ -25,3 +25,18 @@ with f as source:
     audio3 = r.record(source, offset=4, duration=3)
 
 r.recognize_google(audio3) 
+r.recognize_google(audio3, show_all=True)
+
+
+
+#microphone live
+
+mic = sr.Microphone()
+
+#sr.Microphone.list_microphone_names()
+
+with mic as source:
+    r.adjust_for_ambient_noise(source)
+    audio4= r.listen(source)
+r.recognize_google(audio4)
+
