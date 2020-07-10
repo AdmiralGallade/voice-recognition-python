@@ -4,7 +4,8 @@ r = sr.Recognizer()
 
 #r.recognize_google
 
-f= sr.AudioFile("filename.wav")
+f= sr.AudioFile("harvard.wav",duration=4)
 with f as source:
     audio= r.record(source)
 
+r.recognize_google(audio)
